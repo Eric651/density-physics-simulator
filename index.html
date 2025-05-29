@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Density Physics Simulator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+        
+        #canvas {
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+        }
+        
+        #controls {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+        }
+        
+        .control-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        input[type="range"] {
+            width: 200px;
+        }
+        
+        button {
+            background: #0066cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        button:hover {
+            background: #0052a3;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="1200" height="800"></canvas>
+    
+    <div id="controls">
+        <div class="control-group">
+            <label for="densitySlider">Ball Density:</label>
+            <input type="range" id="densitySlider" min="0.5" max="5" step="0.1" value="2.5">
+            <span id="densityValue">2.5</span>
+        </div>
+        
+        <div class="control-group">
+            <button id="dropBall">Drop Ball</button>
+            <button id="resetSim">Reset</button>
+        </div>
+        
+        <div class="control-group">
+            <button id="addObstacle">Add Obstacle</button>
+            <button id="clearObstacles">Clear Obstacles</button>
+        </div>
+    </div>
+    
+    <!-- Load our modular JavaScript files -->
+    <script src="physics-engine.js"></script>
+    <script src="visual-system.js"></script>
+    <script src="controls.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
